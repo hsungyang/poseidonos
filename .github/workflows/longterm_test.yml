@@ -1,0 +1,68 @@
+name: longterm_test
+on:
+  push:
+    branches: [ main ]
+env:
+  BUILD_TYPE: Release
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
+  unittest:
+    name: unit_test
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
+  nportest:
+    name: npor_test
+    needs: [build]
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
+  sportest:
+    name: spor_test
+    needs: [build]
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
+  rebuildtest:
+    name: rebuild_test
+    needs: [build]
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
+  volumetest:
+    name: volume_test
+    needs: [build]
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
+  wbttest:
+    name: wbt_test
+    needs: [build]
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
