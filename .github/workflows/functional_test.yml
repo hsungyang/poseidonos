@@ -12,7 +12,21 @@ jobs:
       run:
         shell: bash
     steps:
+      - uses: actions/checkout@v2
       - run : echo "hello"
+      - run : echo "111" > ${{github.workspace}}/a.txt
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: pos_binary
+          path: |
+            ${{github.workspace}}/a.txt
+      - name: Upload a pos log
+        uses: actions/upload-artifact@v2
+        with:
+          name: pos_log
+          path: |
+            ${{github.workspace}}/a.txt
   unittest:
     name: unit_test
     runs-on: ubuntu-18.04
