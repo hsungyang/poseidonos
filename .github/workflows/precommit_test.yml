@@ -21,6 +21,14 @@ jobs:
         shell: bash
     steps:
       - run : echo "hello"
+  iosystemtest:
+    name: io_system_level_test
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run : echo "hello"
   nportest:
     name: npor_test
     needs: [build]
